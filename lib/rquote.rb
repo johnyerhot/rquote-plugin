@@ -12,9 +12,6 @@ require 'net/http'
 class Rquote
 
 @@service_uri = "http://download.finance.yahoo.com/d/quotes.csv"
-
-  def init
-  end
   
   def find(*args)
     output = Array.new
