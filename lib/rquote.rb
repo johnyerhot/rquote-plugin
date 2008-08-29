@@ -1,6 +1,13 @@
-# Rquote
+# Rquote - Simple, realtime stock market quoting Ruby on Rails plugin
+# Homepage: rquote.yerhot.org
+# Repository: git://github.com/johnyerhot/rquote.git
+# Author: John Yerhot (john@yerhot.org)
+# Sample Usage:
+# quote = Rquote.new
+# quote.find("aapl", "msft") 
+# => [{:change=>"-4.02", :price=>"169.72", :volume=>"16105013", :symbol=>"aapl"}, {:change=>"-0.42", :price=>"27.52", :volume=>"27024456", :symbol=>"msft"}]
+
 require 'net/http'
-require 'csv'
 
 class Rquote
 
