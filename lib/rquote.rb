@@ -1,4 +1,4 @@
-# Rquote - Simple, realtime stock market quoting Ruby on Rails plugin
+# rQuote - Simple, realtime stock market quoting Ruby on Rails plugin
 # Homepage: rquote.yerhot.org
 # Repository: git://github.com/johnyerhot/rquote.git
 # Author: John Yerhot (john@yerhot.org)
