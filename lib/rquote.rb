@@ -7,6 +7,7 @@
 # quote.find("aapl", "msft") 
 # => [{:change=>"-4.02", :price=>"169.72", :volume=>"16105013", :symbol=>"aapl"}, {:change=>"-0.42", :price=>"27.52", :volume=>"27024456", :symbol=>"msft"}]
 
+require 'cgi'
 require 'net/http'
 
 class Rquote
@@ -29,7 +30,7 @@ class Rquote
   end
   
   def send_request(*args)
-    completed_path = @@service_uri + construct_args(args)
+    completed_path = @@service_uri + construct_args(*args)
     uri = URI.parse(completed_path)
     response = Net::HTTP.start(uri.host, uri.port) do |http|
       http.get completed_path
@@ -38,7 +39,7 @@ class Rquote
   end
   
   def construct_args(*args)
-    path = "?f=l1c1v&s=" + args.join(",")
+    path = "?f=l1c1v&s=" + args.map{|x| CGI.escape(x)}.join(",")
   end
 
 end
